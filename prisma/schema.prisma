@@ -5,3 +5,16 @@ datasource db {
 generator client {
   provider = "prisma-client-js"
 }
+
+model Booking {
+  id          Int      @id @default(autoincrement())
+  name        String
+  email       String
+  phone       String
+  adults      Int
+  kids        Int
+  accommodationType    String
+  message     String?
+  createdAt  DateTime @default(now())
+}
+
