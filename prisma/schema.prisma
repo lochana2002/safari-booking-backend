@@ -13,6 +13,7 @@ model Booking {
   phone       String
   adults      Int
   kids        Int
+  country     String
   accommodationType    String
   message     String?
   createdAt  DateTime @default(now())

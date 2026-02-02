@@ -19,6 +19,9 @@ export class CreateBookingDto {
   kids: number;
 
   @IsString()
+  country: string;
+
+  @IsString()
   accommodationType: string;
 
   @IsOptional()
