@@ -35,7 +35,7 @@ model RoomBooking {
   kids      Int
   country   String
   roomType  String
-  message   String
+  message   String?
   createdAt DateTime @default(now())
 }
 
@@ -45,7 +45,7 @@ model Contact {
   email     String
   phone     String
   type      String
-  message   String
+  message   String?
   createdAt DateTime @default(now())
 }
 
