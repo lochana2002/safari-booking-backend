@@ -4,13 +4,13 @@ import { JwtAuthGuard } from '../auth/jwt/jwt.guard';
 import { Delete, Param } from '@nestjs/common';
 
 @UseGuards(JwtAuthGuard)
-@Controller('admin/bookings')
-export class AdminBookingController {
+@Controller('admin/rooms')
+export class AdminRoomController {
   constructor(private prisma: PrismaService) {}
 
   @Get()
-  async getBookings() {
-    return this.prisma.booking.findMany({
+  async getRooms() {
+    return this.prisma.roomBooking.findMany({
       orderBy: { createdAt: 'desc' },
     });
   }
