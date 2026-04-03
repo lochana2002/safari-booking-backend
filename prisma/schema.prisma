@@ -49,3 +49,13 @@ model Contact {
   createdAt DateTime @default(now())
 }
 
+model Blog {
+  id        Int      @id @default(autoincrement())
+  title     String
+  content   String
+  image     String?
+  author    String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
