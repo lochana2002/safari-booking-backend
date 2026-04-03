@@ -6,6 +6,7 @@ import { ContactModule } from './contact/contact.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { AuthModule } from './auth/auth.module';
 import { AdminModule } from './admin/admin.module'
+import { BlogModule } from './blog/blog.module';
 
 
 @Module({
@@ -19,7 +20,8 @@ import { AdminModule } from './admin/admin.module'
     ContactModule,
     PrismaModule,
     AuthModule,
-    AdminModule
+    AdminModule,
+    BlogModule
   ],
 })
 export class AppModule {}
