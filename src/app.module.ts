@@ -7,6 +7,7 @@ import { PrismaModule } from './prisma/prisma.module';
 import { AuthModule } from './auth/auth.module';
 import { AdminModule } from './admin/admin.module'
 import { BlogModule } from './blog/blog.module';
+import { AiModule } from './ai/ai.module';
 
 
 @Module({
@@ -21,7 +22,8 @@ import { BlogModule } from './blog/blog.module';
     PrismaModule,
     AuthModule,
     AdminModule,
-    BlogModule
+    BlogModule,
+    AiModule
   ],
 })
 export class AppModule {}
