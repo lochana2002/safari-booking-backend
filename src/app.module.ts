@@ -8,6 +8,7 @@ import { AuthModule } from './auth/auth.module';
 import { AdminModule } from './admin/admin.module'
 import { BlogModule } from './blog/blog.module';
 import { AiModule } from './ai/ai.module';
+import { ReviewsModule } from './reviews/reviews.module';
 
 
 @Module({
@@ -23,7 +24,8 @@ import { AiModule } from './ai/ai.module';
     AuthModule,
     AdminModule,
     BlogModule,
-    AiModule
+    AiModule,
+    ReviewsModule
   ],
 })
 export class AppModule {}
