@@ -24,6 +24,7 @@ model Booking {
   accommodationType    String
   message     String?
   createdAt  DateTime @default(now())
+   reviews     Review[]
 }
 
 model RoomBooking {
@@ -59,3 +60,12 @@ model Blog {
   updatedAt DateTime @updatedAt
 }
 
+model Review {
+  id        Int      @id @default(autoincrement())
+  rating    Int
+  comment   String
+  createdAt DateTime @default(now())
+
+  bookingId Int   @unique  // ✅ THIS LINE IS KEY
+  booking   Booking @relation(fields: [bookingId], references: [id])
+}
