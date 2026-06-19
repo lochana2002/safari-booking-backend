@@ -2,25 +2,25 @@ import { IsString, IsEmail, IsInt, IsOptional } from 'class-validator';
 
 export class CreateRoomBookingDto {
   @IsString()
-  name: string;
+  name!: string;
 
   @IsEmail()
-  email: string;
+  email!: string;
 
   @IsString()
-  phone: string;
+  phone!: string;
 
   @IsInt()
-  adults: number;
+  adults!: number;
 
   @IsInt()
-  kids: number;
+  kids!: number;
 
   @IsString()
-  country: string;
+  country!: string;
 
   @IsString()
-  roomType: string;
+  roomType!: string;
 
   @IsOptional()
   @IsString()
