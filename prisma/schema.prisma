@@ -14,17 +14,16 @@ model Admin {
 }
 
 model Booking {
-  id          Int      @id @default(autoincrement())
-  name        String
-  email       String
-  phone       String
-  adults      Int
-  kids        Int
-  country     String
-  accommodationType    String
-  message     String?
-  createdAt  DateTime @default(now())
-   reviews     Review[]
+  id                Int      @id @default(autoincrement())
+  name              String
+  email             String
+  phone             String
+  adults            Int
+  kids              Int
+  country           String
+  accommodationType String
+  message           String?
+  createdAt         DateTime @default(now())
 }
 
 model RoomBooking {
@@ -58,14 +57,4 @@ model Blog {
   author    String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-}
-
-model Review {
-  id        Int      @id @default(autoincrement())
-  rating    Int
-  comment   String
-  createdAt DateTime @default(now())
-
-  bookingId Int   @unique  // ✅ THIS LINE IS KEY
-  booking   Booking @relation(fields: [bookingId], references: [id])
 }
