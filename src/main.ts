@@ -5,14 +5,18 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+  // ✅ FIXED CORS
   app.enableCors({
-    origin: 'http://localhost:3000',
+    origin: '*',
   });
 
-  await app.listen(4000);
+  // ✅ FIXED ORDER
+  app.useGlobalPipes(
+    new ValidationPipe({
+      whitelist: true,
+    }),
+  );
 
-  app.useGlobalPipes(new ValidationPipe({
-  whitelist: true,
-}));
+  await app.listen(4002);
 }
 bootstrap();
