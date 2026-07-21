@@ -5,18 +5,29 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  // ✅ FIXED CORS
+  // CORS
   app.enableCors({
-    origin: '*',
+    origin: [
+      'http://localhost:5173', // Vite local
+      'https://your-frontend.onrender.com', // Replace with your frontend URL
+    ],
+    credentials: true,
   });
 
-  // ✅ FIXED ORDER
+  // Validation
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,
+      transform: true,
     }),
   );
 
-  await app.listen(4002);
+  // Render provides PORT automatically
+  const port = process.env.PORT || 4002;
+
+  await app.listen(port);
+
+  console.log(`🚀 Server running on port ${port}`);
 }
+
 bootstrap();
