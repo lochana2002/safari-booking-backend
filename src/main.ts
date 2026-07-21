@@ -5,11 +5,21 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
- app.enableCors({
-  origin: [
-    "http://localhost:5173",
-    "https://safari-booking-suul.vercel.app",
-  ],
+app.enableCors({
+  origin: (origin, callback) => {
+
+    const allowedOrigins = [
+      "http://localhost:5173",
+      "https://safari-booking-suul.vercel.app",
+    ];
+
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+
+  },
   credentials: true,
 });
 
