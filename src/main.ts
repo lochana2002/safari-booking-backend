@@ -8,7 +8,7 @@ async function bootstrap() {
  app.enableCors({
   origin: [
     "http://localhost:5173",
-    "https://safari-booking-idwg.vercel.app",
+    "https://safari-booking-suul.vercel.app",
   ],
   credentials: true,
 });
